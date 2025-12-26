@@ -1,0 +1,21 @@
+go 1.25.5
+
+use (
+	./apps/api
+	./packages/core
+	./packages/failure
+	./packages/network
+	./packages/protocol
+	./packages/simulation
+	./packages/visualization
+	./projects/broadcast
+	./projects/byzantine
+	./projects/clocks
+	./projects/consistency
+	./projects/crdt
+	./projects/quorum
+	./projects/raft
+	./projects/state-machine
+	./projects/two-generals
+	./projects/two-phase-commit
+)
