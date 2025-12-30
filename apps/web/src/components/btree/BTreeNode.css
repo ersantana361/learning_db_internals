@@ -1,0 +1,60 @@
+.btree-node {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 4px;
+  min-width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btree-node.internal {
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+}
+
+.btree-node.leaf {
+  background: linear-gradient(135deg, #1e3a5f, #1e293b);
+  border-color: #3b82f6;
+}
+
+.btree-node.highlighted {
+  border-width: 3px;
+  transform: scale(1.05);
+}
+
+.node-keys {
+  display: flex;
+  gap: 2px;
+}
+
+.key-cell {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 6px 10px;
+  min-width: 32px;
+  text-align: center;
+}
+
+.key-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.btree-handle {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-storage);
+  border: 2px solid var(--bg-primary);
+}
+
+.btree-handle[data-handlepos='top'] {
+  top: -4px;
+}
+
+.btree-handle[data-handlepos='bottom'] {
+  bottom: -4px;
+}

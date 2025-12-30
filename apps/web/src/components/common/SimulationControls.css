@@ -1,0 +1,121 @@
+.simulation-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.step-info {
+  text-align: center;
+  min-height: 60px;
+}
+
+.step-counter {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.step-title {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.step-description {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.step-placeholder {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.control-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.control-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.control-btn:hover:not(:disabled) {
+  background: var(--border-color);
+  border-color: var(--text-secondary);
+}
+
+.control-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.control-btn.primary {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-storage);
+  border-color: var(--accent-storage);
+}
+
+.control-btn.primary:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.speed-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.speed-control input[type='range'] {
+  width: 100px;
+  accent-color: var(--accent-storage);
+}
+
+.speed-value {
+  min-width: 2rem;
+  text-align: right;
+  font-size: 0.875rem;
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot.connected {
+  background: #10b981;
+}
+
+.status-dot.disconnected {
+  background: #ef4444;
+}

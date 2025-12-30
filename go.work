@@ -1,0 +1,23 @@
+go 1.23
+
+use (
+	./apps/api
+	./packages/core
+	./packages/protocol
+	./packages/simulation
+	./packages/storage
+	./packages/query
+	./packages/transaction
+	./packages/buffer
+	./packages/index
+	./projects/btree
+	./projects/lsm-tree
+	./projects/buffer-pool
+	./projects/page-layout
+	./projects/query-parser
+	./projects/query-optimizer
+	./projects/execution-engine
+	./projects/mvcc
+	./projects/wal
+	./projects/locking
+)

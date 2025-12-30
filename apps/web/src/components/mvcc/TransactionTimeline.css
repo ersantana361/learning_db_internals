@@ -1,0 +1,90 @@
+.transaction-timeline {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.transaction-timeline.empty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.timeline-header {
+  display: grid;
+  grid-template-columns: 1fr 80px 60px 60px;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-tertiary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.timeline-body {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 60px 60px;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.2s;
+}
+
+.timeline-row:last-child {
+  border-bottom: none;
+}
+
+.timeline-row.highlighted {
+  background: rgba(59, 130, 246, 0.1);
+  border-left: 3px solid;
+}
+
+.timeline-row.active {
+  background: rgba(251, 191, 36, 0.1);
+}
+
+.timeline-row.committed {
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.timeline-row.aborted {
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.tx-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-primary);
+}
+
+.tx-status {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.tx-status.active {
+  color: #fbbf24;
+}
+
+.tx-status.committed {
+  color: #10b981;
+}
+
+.tx-status.aborted {
+  color: #ef4444;
+}
+
+.tx-time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}

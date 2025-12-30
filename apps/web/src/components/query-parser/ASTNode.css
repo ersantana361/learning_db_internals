@@ -1,0 +1,39 @@
+.ast-node {
+  background: var(--bg-secondary);
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-width: 80px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.ast-node.highlighted {
+  transform: scale(1.05);
+}
+
+.node-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.node-type {
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.node-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-primary);
+}
+
+.ast-handle {
+  width: 8px;
+  height: 8px;
+  background: var(--text-secondary);
+  border: 2px solid var(--bg-secondary);
+}

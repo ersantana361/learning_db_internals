@@ -1,0 +1,113 @@
+.step-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.timeline-track {
+  display: flex;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  gap: 0;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.step-marker {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.step-number {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.timeline-step.active .step-marker {
+  background: var(--accent-storage);
+  border-color: var(--accent-storage);
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+}
+
+.timeline-step.active .step-number {
+  color: white;
+}
+
+.timeline-step.completed .step-marker {
+  background: #10b981;
+  border-color: #10b981;
+}
+
+.timeline-step.completed .step-number {
+  color: white;
+}
+
+.step-label {
+  margin-top: 0.5rem;
+  text-align: center;
+  max-width: 80px;
+}
+
+.step-title-small {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.timeline-step.active .step-title-small {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.step-connector {
+  position: absolute;
+  top: 14px;
+  left: calc(50% + 14px);
+  width: calc(100% - 28px);
+  height: 2px;
+  background: var(--border-color);
+}
+
+.timeline-step.completed .step-connector {
+  background: #10b981;
+}
+
+.progress-bar {
+  height: 4px;
+  background: var(--bg-tertiary);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-storage), #10b981);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}

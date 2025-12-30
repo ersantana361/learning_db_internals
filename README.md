@@ -1,47 +1,34 @@
-# Learning Database Internals
+# Database Internals
 
-A hands-on learning project exploring database internals and distributed systems concepts, based on Martin Kleppmann's distributed systems course.
+An interactive learning platform for understanding how databases work under the hood.
 
-## Project Structure
+## Topics Covered
 
-```
-.
-├── martin_kleppmann/          # Course notes and summaries
-├── distributed-systems-learning/  # Interactive learning platform
-│   ├── apps/
-│   │   ├── api/               # Go WebSocket API server
-│   │   └── web/               # React frontend (Vite)
-│   ├── packages/              # Shared Go packages
-│   │   ├── core/              # Core types (nodes, messages, clocks)
-│   │   ├── simulation/        # Simulation engine
-│   │   ├── visualization/     # Event system for visualization
-│   │   ├── failure/           # Failure injection
-│   │   ├── network/           # Network transport
-│   │   └── protocol/          # WebSocket protocol messages
-│   └── projects/              # Distributed systems implementations
-│       ├── two-generals/      # Two Generals Problem
-│       ├── byzantine/         # Byzantine Fault Tolerance
-│       ├── clocks/            # Logical & Vector Clocks
-│       ├── broadcast/         # Broadcast Algorithms
-│       ├── raft/              # Raft Consensus
-│       ├── quorum/            # Quorum Systems
-│       ├── state-machine/     # State Machine Replication
-│       ├── two-phase-commit/  # 2PC Protocol
-│       ├── consistency/       # Consistency Models
-│       └── crdt/              # CRDTs
-└── employees.sql              # Sample SQL data
-```
+### Storage Engines
+- **B-Tree** - Self-balancing tree data structure for sorted data
+- **LSM Tree** - Log-structured merge tree for write-optimized storage
+- **Buffer Pool** - In-memory page cache management
+- **Page Layout** - On-disk page structure and organization
+
+### Query Processing
+- **Query Parser** - SQL parsing and AST generation
+- **Query Optimizer** - Cost-based query plan optimization
+- **Execution Engine** - Query plan execution and operators
+
+### Transactions
+- **MVCC** - Multi-version concurrency control
+- **Write-Ahead Log** - Durability and crash recovery
+- **Locking** - Lock management and deadlock detection
 
 ## Quick Start
 
-### Using Docker (Recommended)
+### Using Docker
 
 ```bash
-cd distributed-systems-learning
-docker-compose up --build
+docker compose up --build
 ```
 
-Access the app at http://localhost:3000
+Access the app at http://localhost:3001
 
 ### Manual Setup
 
@@ -52,32 +39,47 @@ Access the app at http://localhost:3000
 
 **Backend:**
 ```bash
-cd distributed-systems-learning
 go run ./apps/api/cmd/server/main.go
 ```
 
 **Frontend:**
 ```bash
-cd distributed-systems-learning
 pnpm install
 pnpm web:dev
 ```
 
-## Topics Covered
+## Project Structure
 
-- Two Generals Problem
-- Byzantine Generals Problem
-- Physical & Logical Time
-- Clock Synchronization
-- Causality & Happens-Before
-- Broadcast Ordering (FIFO, Causal, Total Order)
-- Replication & Quorums
-- Consensus (Raft)
-- Two-Phase Commit
-- Linearizability & Eventual Consistency
-- CRDTs
+```
+db_internals/
+├── apps/
+│   ├── api/                    # Go WebSocket API server
+│   └── web/                    # React frontend (Vite)
+├── packages/                   # Shared Go packages
+│   ├── core/                   # Core types
+│   ├── storage/                # Storage engine abstractions
+│   ├── query/                  # Query processing
+│   ├── transaction/            # Transaction management
+│   ├── buffer/                 # Buffer pool
+│   └── index/                  # Index structures
+├── projects/                   # Interactive implementations
+│   ├── btree/                  # B-Tree visualization
+│   ├── lsm-tree/               # LSM Tree simulation
+│   ├── buffer-pool/            # Buffer pool management
+│   ├── page-layout/            # Page structure explorer
+│   ├── query-parser/           # SQL parser visualization
+│   ├── query-optimizer/        # Query plan optimization
+│   ├── execution-engine/       # Execution visualization
+│   ├── mvcc/                   # MVCC simulation
+│   ├── wal/                    # WAL and recovery
+│   └── locking/                # Lock manager simulation
+├── docker-compose.yml
+├── go.work
+└── package.json
+```
 
 ## Resources
 
-- [Martin Kleppmann's Distributed Systems Course](https://www.cl.cam.ac.uk/teaching/2122/ConcDisSys/)
-- [Designing Data-Intensive Applications](https://dataintensive.net/)
+- *Database Internals* by Alex Petrov
+- *Designing Data-Intensive Applications* by Martin Kleppmann
+- CMU 15-445/645 Database Systems course

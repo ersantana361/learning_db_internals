@@ -1,0 +1,22 @@
+# Dependencies - must use glob patterns for nested directories
+node_modules
+**/node_modules
+
+# Build outputs
+dist
+**/dist
+
+# Git
+.git
+.gitignore
+
+# IDE and editor files
+.vscode
+.idea
+*.md
+
+# Claude
+.claude
+
+# Logs
+*.log

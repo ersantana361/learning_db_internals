@@ -1,0 +1,143 @@
+.version-chain-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.version-chain-view.empty {
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--text-secondary);
+}
+
+.row-chain {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+}
+
+.row-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.row-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent-transaction);
+}
+
+.version-count {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.chain-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.version-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.chain-arrow {
+  color: var(--text-secondary);
+}
+
+.version-card {
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem;
+  min-width: 180px;
+  transition: all 0.2s;
+}
+
+.version-card.highlighted {
+  border-width: 2px;
+}
+
+.version-card.deleted {
+  opacity: 0.6;
+  border-style: dashed;
+}
+
+.version-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.version-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.current-badge {
+  font-size: 0.625rem;
+  padding: 0.125rem 0.375rem;
+  background: var(--accent-transaction);
+  color: white;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.version-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  font-size: 0.625rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.version-data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: var(--bg-primary);
+  border-radius: 4px;
+}
+
+.data-field {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.field-key {
+  color: var(--text-secondary);
+}
+
+.field-value {
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.deleted-info {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.625rem;
+  color: #ef4444;
+}
